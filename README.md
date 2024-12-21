@@ -72,12 +72,6 @@ The following machine learning models were implemented and evaluated:
 - Python 3.12
 - Anaconda environment (or preferred virtual environment)
 
-### Installation
-1. Clone the repository.
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
 # Model Evaluation Metrics
 
 This project evaluates the performance of multiple machine learning models, including SVC, MLP, Naive Bayes, and XGBoost. The evaluation metrics used depend on whether the problem is a classification or regression task.
@@ -89,14 +83,6 @@ This project evaluates the performance of multiple machine learning models, incl
 ### 1. **Define Models and Predictions**
 We store model predictions in a dictionary for easier access and evaluation:
 
-```python
-models = {
-    'SVC': y_test_pred_svc,  # SVC model predictions
-    'MLP': y_test_pred_mlp,  # MLP model predictions
-    'Naive Bayes': y_test_pred_nb,  # Naive Bayes model predictions
-    'XGBoost': y_test_pred_xg  # XGBoost model predictions
-}
-```
 
 ### 2. **Choose Metrics**
 #### For Classification:
@@ -112,46 +98,12 @@ models = {
 ### 3. **Evaluate Metrics**
 For each model, the metrics are calculated and stored in a results table for easy comparison.
 
-#### Classification Example:
-```python
-for model_name, y_pred in models.items():
-    acc = accuracy_score(y_test, y_pred)
-    report = classification_report(y_test, y_pred, output_dict=True)
-    precision = report['macro avg']['precision']
-    recall = report['macro avg']['recall']
-    f1_score = report['macro avg']['f1-score']
 
-    results.append({
-        'Model': model_name,
-        'Accuracy': acc,
-        'Precision': precision,
-        'Recall': recall,
-        'F1-Score': f1_score
-    })
-```
 
-#### Regression Example:
-```python
-for model_name, y_pred in models.items():
-    mse = mean_squared_error(y_test, y_pred)
-    r2 = r2_score(y_test, y_pred)
-
-    results.append({
-        'Model': model_name,
-        'Mean Squared Error': mse,
-        'R-squared': r2
-    })
-```
 
 ### 4. **Display Results**
 The results are stored in a Pandas DataFrame for clear visualization:
 
-```python
-results_df = pd.DataFrame(results)
-print(results_df)
-```
-
----
 
 ## Error Handling
 
@@ -159,11 +111,6 @@ print(results_df)
 1. **Continuous Target in Classification**:
    - Ensure the target variable (`y_test`) contains discrete class labels.
    - If the task is regression, switch to appropriate regression metrics.
-
-   Example:
-   ```python
-   ValueError: continuous is not supported
-   ```
 
 2. **Mismatched Metrics**:
    - Use classification metrics for classification tasks and regression metrics for regression tasks.
