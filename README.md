@@ -1,3 +1,83 @@
+# Car Price Prediction Project
+
+## Overview
+This project involves predicting car prices based on various features using machine learning models. The pipeline includes data preprocessing, feature engineering, model training, evaluation, and comparative analysis of multiple models.
+
+---
+
+## Data Preparation
+
+### Data Preprocessing
+- Data is read using `pandas` and checked for null values and inconsistencies.
+- Continuous and categorical features are separated and treated accordingly.
+- Data normalization and encoding are applied as required.
+
+### Feature Engineering
+- Domain knowledge is used to create new features or transform existing ones.
+- Feature selection is performed to reduce dimensionality and improve model efficiency.
+
+---
+
+## Models Used
+The following machine learning models were implemented and evaluated:
+
+1. **Support Vector Regressor (SVR)**
+2. **Multilayer Perceptron Regressor (MLP)**
+3. **Naive Bayes (Gaussian)**
+4. **XGBoost Regressor**
+
+---
+
+## Evaluation Metrics
+
+### Regression Metrics
+- **Mean Absolute Error (MAE)**: Measures average magnitude of errors in predictions.
+- **Mean Squared Error (MSE)**: Penalizes larger errors more heavily.
+- **Root Mean Squared Error (RMSE)**: Square root of MSE for interpretable units.
+- **R-squared (R²)**: Indicates the proportion of variance explained by the model.
+
+### Classification Metrics (if applicable):
+- **Accuracy**: Percentage of correct predictions.
+- **Precision**: Proportion of true positives among predicted positives.
+- **Recall**: Proportion of true positives among actual positives.
+- **F1-Score**: Harmonic mean of precision and recall.
+
+---
+
+## Analysis and Results
+
+### Model Performance
+- **XGBoost Regressor** achieved the lowest RMSE and highest R², making it the best-performing model.
+- **Multilayer Perceptron** showed promising results but required more tuning.
+- **SVR** struggled with complex relationships in the dataset.
+
+### Error Handling
+- Classification metrics were initially calculated, but regression tasks require adapting these metrics to continuous targets.
+- Adjustments were made to use regression-specific metrics.
+
+---
+
+## Visualizations
+
+### Key Insights:
+- Correlation heatmaps to identify feature relationships.
+- Actual vs. Predicted plots for model evaluation.
+- Residual plots to analyze error distribution.
+
+---
+
+## Steps to Reproduce
+
+### Prerequisites
+- Python 3.12
+- Anaconda environment (or preferred virtual environment)
+
+### Installation
+1. Clone the repository.
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 # Model Evaluation Metrics
 
 This project evaluates the performance of multiple machine learning models, including SVC, MLP, Naive Bayes, and XGBoost. The evaluation metrics used depend on whether the problem is a classification or regression task.
